@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- all content -->
+    <div class="container">
+        <!-- page header -->
+        <div class="row myHeader">
+            <div class="col-lg-8">
+                <img src="resources/userAvatar.jpeg" class="userPhoto" alt="">
+                <label for="username" id="username">Username</label>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-end">
+                <a href="">Sign Out</a>
+            </div>
+        </div>
+        <br>
+        <!-- page body -->
+        <div class="pageBody">
+            <div class="row">
+                <div class="col-lg-2">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button class="btn btn-link" id="burger">Burger</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-link" id="pizza">Pizza</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-10" id="map"></div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script src="scripts/main.js"></script>
+    <!-- google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
