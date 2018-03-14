@@ -7,7 +7,8 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -29,8 +30,12 @@
             <div class="row">
                 <div class="col-lg-2">
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="" id="burger">Burger</a></li>
-                        <li class="list-group-item"><a href="" id="pizza">Pizza</a></li>
+                        <li class="list-group-item">
+                            <button class="btn btn-link" id="burger">Burger</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-link" id="pizza">Pizza</button>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-10" id="map"></div>
@@ -45,7 +50,8 @@
     <!-- javascript -->
     <script src="scripts/main.js"></script>
     <!-- google maps api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap"
+        async defer></script>
 
 </body>
 

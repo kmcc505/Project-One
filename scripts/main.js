@@ -3,9 +3,16 @@ var infowindow;
 var service;
 
 
-function initMap() {
-    var myCoords = { lat: -95.3698, lng: 29.7604 };
-    var pyrmont = {lat: -33.867, lng: 151.195};
+function initMap(place) {
+    var myCoords = { lat: 29.7604, lng: -95.3698 };
+
+    $("#burger").click(function () {
+        initMap('burger');
+    });
+
+    $("#pizza").click(function () {
+        initMap('pizza');
+    });
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: myCoords,
@@ -17,12 +24,11 @@ function initMap() {
     var request = {
         location: myCoords,
         radius: '1000',
-        query: 'restaurant'
+        query: place
     };
 
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
-
 
     function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -31,7 +37,7 @@ function initMap() {
             }
         }
     }
-
+    // creating the marker
     function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -44,4 +50,7 @@ function initMap() {
             infowindow.open(map, this);
         });
     }
-}
+
+
+
+} //end init() 
