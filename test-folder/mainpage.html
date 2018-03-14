@@ -12,53 +12,47 @@
 </head>
 
 <body>
-    <!-- main container -->
+    <!-- all content -->
     <div class="container">
-        <!-- header -->
+        <!-- page header -->
         <div class="row myHeader">
-            <div class="col-md-8">
-                <img src="resources/userAvatar.png" class="userAvatar" id="userAvatarImg" alt="">
-                <label for="username" class="myLabel">Username:</label>
+            <div class="col-lg-8">
+                <img src="resources/userAvatar.jpeg" class="userPhoto" alt="">
+                <label for="username" id="username">Username</label>
             </div>
-            <div class="col-md-4 d-flex justify-content-end">
-                <a href="" class="myLinks">Sign Out</a>
+            <div class="col-lg-4 d-flex justify-content-end">
+                <a href="">Sign Out</a>
             </div>
         </div>
         <br>
-        <!-- body -->
+        <!-- page body -->
         <div class="pageBody">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-lg-2">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <input type="checkBox" id="burger">Burger
+                            <button class="btn btn-link" id="burger">Burger</button>
                         </li>
                         <li class="list-group-item">
-                            <input type="checkBox" id="pizza">Pizza
+                            <button class="btn btn-link" id="pizza">Pizza</button>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-9" id="myMap">
+                <div class="col-lg-10" id="map"></div>
 
-                </div>
             </div>
-
-
         </div>
-    </div>
-    <!-- scripts -->
 
-    <!-- jQuery -->
+    </div>
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <!-- Boostrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- My Javascript file -->
+    <!-- javascript -->
     <script src="scripts/main.js"></script>
     <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap"
         async defer></script>
+
 </body>
 
 </html>
