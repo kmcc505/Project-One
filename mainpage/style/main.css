@@ -1,0 +1,79 @@
+body {
+    font-family: 'Trebuchet MS' !important;
+}
+.main {
+    border: 1px solid #0f2851;
+}
+/* header styling */
+.userPhoto {
+    width: 16%;
+    height: 70%;
+    border-radius: 50%;
+    margin-top: 3%;
+}
+.myHeader {
+    background-color: #0f2851;
+    color: white;
+}
+#signOutButton {
+    color: white;
+    margin-left: 2%;
+}
+#myList {
+    background-color: #0f2851;
+    color: white;
+    border: none;
+}
+#username, #mylist {
+    margin-left: 2%;
+}
+#result {
+    margin-top: 3%;
+}
+#myList:hover {
+    border: 0.5px rgb(86, 182, 153) solid;
+}
+
+/* body styling */
+
+/* place search bar */
+#place {
+    width: 50%;
+    font-size: 135%;
+    border: 0.5px solid #0f2851;
+}
+.searchForm {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #0f2851;
+}
+.myBtn {
+    font-size: 100%;
+    background-color: rgb(86, 182, 153);
+    color: white;
+    border: 0.5px solid #0f2851;
+}
+.myBtn:hover {
+    background-color: rgb(83, 211, 173);
+    border-color: #0f2851;
+}
+.myBtn:active {
+    background-color: rgb(82, 82, 82);
+    border-color: #0f2851;
+}
+
+/* place's details container */
+#map {
+    height: 500px;
+    width: 100%;
+}
+.placeContainer {
+    background-color: #0f2851;
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+.place_details {
+    padding-top: 5%;
+    margin-left: 2%;
+}
