@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style/myList.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- place info & pictures container -->
+    <div class="container main">
+        <div class="row">
+            <div id="map"></div>
+            <div class="d-flex justify-content-start placeContainer2" id="ListContainer">
+                <div class="col-lg-5 place_photos2" id="placePhoto2"></div>
+                <div class="col-lg-5 place_details2">
+                    <p id="placeDetails2"></p>
+                </div>
+                <!-- add button -->
+                <div class="col-lg-2" id="addButtonDiv2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script src="scripts/myList.js"></script>
+    <!-- google maps api -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap">
+    </script>
+
+</body>
+
+</html>

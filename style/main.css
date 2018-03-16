@@ -5,28 +5,18 @@ body {
     border: 1px solid #0f2851;
 }
 /* header styling */
-.userPhoto {
-    width: 16%;
-    height: 70%;
-    border-radius: 50%;
-    margin-top: 3%;
-}
 .myHeader {
     background-color: #0f2851;
     color: white;
 }
-#signOutButton {
-    color: white;
-    margin-left: 2%;
-}
-#username, #myList {
-    margin-left: 2%;
-}
 #result {
     margin-top: 3%;
 }
-#myList:disabled {
+#myListButton:disabled {
     background-color: rgb(143, 143, 143);
+}
+#myBrand {
+    margin-top: 3%;
 }
 /* body styling */
 

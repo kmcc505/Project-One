@@ -6,25 +6,27 @@ $("#searchButton").click(function () {
     initMap(($("#place").val()));
 });
 
+
 function initMap(place) {
-    //declaring variables to match HTML elements
+    //declaring a places array/list
+    var myTempList = [];
+    //declaring variables that correspond to the HTML elements
+    var $myListBtn = $("#myListButton");
     var $placePhoto = $("#placePhoto");
     var $placeDetails = $("#placeDetails");
     var $addButtonDiv = $("#addButtonDiv");
     var addButton = document.createElement('button');
     addButton.textContent = "Add to List";
+    addButton.id = "addButton"
     addButton.className = ("myBtn");
     var img = document.createElement('IMG');
     //first position coordinates
     var myCoords = { lat: 29.7604, lng: -95.3698 };
-
     map = new google.maps.Map(document.getElementById('map'), {
         center: myCoords,
         zoom: 10
     });
-
     infowindow = new google.maps.InfoWindow();
-
     var request = {
         location: myCoords,
         radius: '100000',
@@ -67,8 +69,9 @@ function initMap(place) {
         google.maps.event.addListener(marker, 'click', function () {
             infowindow.setContent(place.name + "<p>" + place.formatted_address + "</p>");
             infowindow.open(map, this);
-            console.log(place);
-            // console.log(place.opening_hours);
+            console.log(place); //return the JSON file (used to extract info)
+
+            // console.log(place.opening_hours[0].periods[0]);
 
             // create image and details and append to HTML page
             updatePlace(); //clears current places image if any
@@ -82,20 +85,33 @@ function initMap(place) {
                 "<p>Rating: " + placeRating + "</p>" +
                 "<p>Prices (out of 5): " + placeCost + "</p>");
             $addButtonDiv.append(addButton);
-            // creating places object
-            var myPlaces = {
-                photoUrl,
-                placeName,
-                placeAddress,
-                placeOpsHours,
-                placeRating,
-                placeCost,
-            }
+            // when add button is clicked
+            $("#addButton").click(function () {
+                myListButton.removeAttribute("disabled");
+                var placeID = place.place_id;
+                myTempList.push(placeID);
+            });
         });
 
     }//end createMarker()
 
+    var myPlacesList = [];
+    $("#myListButton").click(function () {
+        // removing duplicates from myTempList
+        $.each(myTempList, function (i, e) {
+            if ($.inArray(e, myPlacesList) === -1) myPlacesList.push(e);
+        });
+        var idString = '' //to store all id(s)
+        for (let i = 0; i < myPlacesList.length; i++) {
+            idString += "id" + i + "=" + myPlacesList[i] + "&";
+        }
+        setTimeout(function () {
+            window.location.href = "myList.html?" + idString;
+        }, 0);
+    });
+
 } //end init() 
+
 
 //share on facebook method - after share button is clicked
 (function (d, s, id) {
@@ -150,4 +166,3 @@ function updatePlace() {
         addButtonDiv.removeChild(addButtonDiv.firstChild);
     }
 }
-
