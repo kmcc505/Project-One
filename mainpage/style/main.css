@@ -19,21 +19,15 @@ body {
     color: white;
     margin-left: 2%;
 }
-#myList {
-    background-color: #0f2851;
-    color: white;
-    border: none;
-}
-#username, #mylist {
+#username, #myList {
     margin-left: 2%;
 }
 #result {
     margin-top: 3%;
 }
-#myList:hover {
-    border: 0.5px rgb(86, 182, 153) solid;
+#myList:disabled {
+    background-color: rgb(143, 143, 143);
 }
-
 /* body styling */
 
 /* place search bar */
@@ -74,6 +68,5 @@ body {
     padding: 10px;
 }
 .place_details {
-    padding-top: 5%;
     margin-left: 2%;
 }

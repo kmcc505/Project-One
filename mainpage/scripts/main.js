@@ -7,7 +7,15 @@ $("#searchButton").click(function () {
 });
 
 function initMap(place) {
-    //console.log(place);
+    //declaring variables to match HTML elements
+    var $placePhoto = $("#placePhoto");
+    var $placeDetails = $("#placeDetails");
+    var $addButtonDiv = $("#addButtonDiv");
+    var addButton = document.createElement('button');
+    addButton.textContent = "Add to List";
+    addButton.className = ("myBtn");
+    var img = document.createElement('IMG');
+    //first position coordinates
     var myCoords = { lat: 29.7604, lng: -95.3698 };
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -35,6 +43,17 @@ function initMap(place) {
     }
     // creating the marker
     function createMarker(place) {
+        // place attributes from the JSON resonse
+        var photoUrl = place.photos[0].getUrl({ maxHeight: 400, maxWidth: 400 });
+        var placeName = place.name;
+        var placeAddress = place.formatted_address;
+        var placeOpsHours = place.opening_hours;
+        var placeRating = place.rating;
+        var placeCost = place.price_level;
+        if (placeCost == undefined) {
+            placeCost = "Not available"
+        }
+
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
             map: map,
@@ -51,25 +70,8 @@ function initMap(place) {
             console.log(place);
             // console.log(place.opening_hours);
 
-            // place attributes from the JSON resonse
-            var photoUrl = place.photos[0].getUrl({ maxHeight: 400, maxWidth: 400 });
-            var placeName = place.name;
-            var placeAddress = place.formatted_address;
-            var placeOpsHours = place.opening_hours;
-            var placeRating = place.rating;
-            var placeCost = place.price_level;
-            if (placeCost == undefined) {
-                placeCost = "Not available"
-            }
             // create image and details and append to HTML page
-            var $placePhoto = $("#placePhoto");
-            var $placeDetails = $("#placeDetails");
-            var $addButtonDiv = $("#addButtonDiv");
-            var addButton = document.createElement('button');
-            addButton.textContent = "Add to List";
-            addButton.className = ("myBtn");
-            var img = document.createElement('IMG');
-            updatePlace();
+            updatePlace(); //clears current places image if any
             setTimeout(function () {
                 img.setAttribute('src', photoUrl);
                 $placePhoto.append(img);
@@ -80,6 +82,15 @@ function initMap(place) {
                 "<p>Rating: " + placeRating + "</p>" +
                 "<p>Prices (out of 5): " + placeCost + "</p>");
             $addButtonDiv.append(addButton);
+            // creating places object
+            var myPlaces = {
+                photoUrl,
+                placeName,
+                placeAddress,
+                placeOpsHours,
+                placeRating,
+                placeCost,
+            }
         });
 
     }//end createMarker()
@@ -124,7 +135,7 @@ function initMap(place) {
     }
 })();
 
-// updates the place
+// this method updates the place
 function updatePlace() {
     var $placePhoto = $("#placePhoto");
     var $placeDetails = $("#placeDetails");
@@ -139,3 +150,4 @@ function updatePlace() {
         addButtonDiv.removeChild(addButtonDiv.firstChild);
     }
 }
+
