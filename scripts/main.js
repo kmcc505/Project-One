@@ -1,13 +1,12 @@
-var map;
-var infowindow;
-var service;
-
 $("#searchButton").click(function () {
     initMap(($("#place").val()));
 });
 
 
 function initMap(place) {
+    var map;
+    var infowindow;
+    var service;
     //declaring a places array/list
     var myTempList = [];
     //declaring variables that correspond to the HTML elements
