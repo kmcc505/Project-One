@@ -49,7 +49,6 @@ function initMap(place) {
         var photoUrl = place.photos[0].getUrl({ maxHeight: 400, maxWidth: 400 });
         var placeName = place.name;
         var placeAddress = place.formatted_address;
-        var placeOpsHours = place.opening_hours;
         var placeRating = place.rating;
         var placeCost = place.price_level;
         if (placeCost == undefined) {
@@ -62,17 +61,14 @@ function initMap(place) {
             position: place.geometry.location
         });
 
-        // google.map.event.addListener(marker, 'mouseover', function () {
-        //     infowindow.setContent(place.name + " -- " + place.formatted_address);
-        // });
+        google.maps.event.addListener(marker, 'mouseover', function () {
+            infowindow.setContent(place.name + " -- " + place.formatted_address);
+            infowindow.open(map, this);
+        });
 
         google.maps.event.addListener(marker, 'click', function () {
             infowindow.setContent(place.name + "<p>" + place.formatted_address + "</p>");
             infowindow.open(map, this);
-            console.log(place); //return the JSON file (used to extract info)
-
-            // console.log(place.opening_hours[0].periods[0]);
-
             // create image and details and append to HTML page
             updatePlace(); //clears current places image if any
             setTimeout(function () {
@@ -81,8 +77,7 @@ function initMap(place) {
             }, 0);
             $placeDetails.append("<h3>" + placeName + "</h3>" +
                 "<p>" + placeAddress + "</p>" +
-                "<p>Hours: " + placeOpsHours + "</p>" +
-                "<p>Rating: " + placeRating + "</p>" +
+                "<p>Rating (out of 5): " + placeRating + "</p>" +
                 "<p>Prices (out of 5): " + placeCost + "</p>");
             $addButtonDiv.append(addButton);
             // when add button is clicked
