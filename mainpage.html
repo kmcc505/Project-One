@@ -1,58 +1,159 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Yum Yums</title>
 </head>
-
 <body>
-    <!-- all content -->
-    <div class="container">
-        <!-- page header -->
-        <div class="row myHeader">
-            <div class="col-lg-8">
-                <img src="resources/userAvatar.jpeg" class="userPhoto" alt="">
-                <label for="username" id="username">Username</label>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-end">
-                <a href="">Sign Out</a>
-            </div>
-        </div>
-        <br>
-        <!-- page body -->
-        <div class="pageBody">
-            <div class="row">
-                <div class="col-lg-2">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <button class="btn btn-link" id="burger">Burger</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="btn btn-link" id="pizza">Pizza</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-10" id="map"></div>
-
-            </div>
-        </div>
-
-    </div>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <!-- javascript -->
-    <script src="scripts/main.js"></script>
-    <!-- google maps api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap"
-        async defer></script>
-
+  
 </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Yum-Yums listmaker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Yum-Yums</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#find">Find</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#list">Share</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <h1 class="text-uppercase mb-0">Yum-Yums!</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Find. List. Share.</h2>
+      </div>
+      <br>
+      <div>    
+          <i id="icon" class="fa fa-hand-peace-o" style="text-shadow: none; font-size: 200px; color: rgb(24, 188, 156); height: 215px; width: 215px; line-height: 215px; border-radius: 15%; text-align: center; background-color: rgb(255, 255, 255);"></i> 
+    </div>
+
+    </header>
+  <div id="find">
+    <br>
+  </div>
+
+    <!-- Search bar section-->
+    <section id="portfolio">
+      <div class="container">
+        <div class="row justify-content-center searchForm">
+          <input type="text" id="place" placeholder="Search Places">
+          <button type="submit" class="myBtn" id="searchButton">Search</button>
+      </div>
+    </section>
+
+    <div>
+      </div>
+      <div class="container">
+          <hr class="star-dark mb-5">
+        
+        <div id="map"></div>
+
+      </div>
+  <section>
+    <div id="list">
+        <button id="myListButton" class="btn btn-secondary btn-lg" type="button" disabled>View My List</button>
+        <br>
+      </div>
+    </section>
+    <!-- This id "about" will have the sharing feature.  -->
+    <section class="bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="d-flex justify-content-start placeContainer">
+              <div class="col-lg-5 place_photos" id="placePhoto"></div>
+              <div class="col-lg-5 place_details">
+                  <p id="placeDetails"></p>
+              </div>
+              <!-- add button -->
+              <div class="col-lg-2" id="addButtonDiv"></div>
+          </div>
+      </div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Us Tho, Inc.</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+
+  <!-- jquery, etc from bootstap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  
+  <!-- google maps api -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8SbZuil8ay628SnyeZrUhXR64Qvpm1uw&libraries=places&callback=initMap"async defer></script>
+
+  <!--Map scripts for this application-->
+  <script src="js/myList.js"></script>
+
+ <!--Custom cripts for this application-->
+ <script src="js/main.js"></script>
+
+ <!--Twitter Share button-->
+
+ <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  
+  </body>
 
 </html>

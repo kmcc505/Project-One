@@ -1,3 +1,2 @@
-Team Members:
-1- Kelsey McCarson
-2- Abdullah Alani
+# API-Project
+First project attempt at Digital Crafts 2018

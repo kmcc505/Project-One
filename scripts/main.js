@@ -10,13 +10,11 @@ function initMap(place) {
         initMap('burger');
     });
 
-    $("#pizza").click(function () {
-        initMap('pizza');
-    });
 
+    //creates the map on page and centers with zoom.
     map = new google.maps.Map(document.getElementById('map'), {
         center: myCoords,
-        zoom: 14
+        zoom: 5
     });
 
     infowindow = new google.maps.InfoWindow();
@@ -37,7 +35,7 @@ function initMap(place) {
             }
         }
     }
-    // creating the marker
+    // creating the markers 
     function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -50,7 +48,6 @@ function initMap(place) {
             infowindow.open(map, this);
         });
     }
-
 
 
 } //end init() 
