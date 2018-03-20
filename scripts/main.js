@@ -2,11 +2,11 @@ $("#searchButton").click(function () {
     initMap(($("#place").val()));
 });
 
-
 function initMap(place) {
     var map;
     var infowindow;
     var service;
+
     //declaring a places array/list
     var myTempList = [];
     //declaring variables that correspond to the HTML elements
@@ -17,7 +17,7 @@ function initMap(place) {
     var addButton = document.createElement('button');
     addButton.textContent = "Add to List";
     addButton.id = "addButton"
-    addButton.className = ("myBtn");
+    addButton.className = ("btn btn-secondary btn-lg");
     var img = document.createElement('IMG');
     //first position coordinates
     var myCoords = { lat: 29.7604, lng: -95.3698 };
@@ -137,7 +137,7 @@ function initMap(place) {
         var degF = degC * 1.8 + 32;
         var degFInt = Math.floor(degF);
         var $weatherBox = $('#result');
-        $weatherBox.append("<h1>Houston</h1>" + "<p>" + degCInt + "&#176; C / " + degFInt + "&#176; F " + condition + "</p>");
+        $weatherBox.append("<h2>Houston</h2>" + "<p>" + degCInt + "&#176; C / " + degFInt + "&#176; F " + condition + "</p>");
     }
     // handle XHR error
     function responseFailure() {

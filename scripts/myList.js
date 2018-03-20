@@ -46,6 +46,7 @@ function initMap() {
                 }, 0);
                 var placeName = document.createTextNode(place.name);
                 var placeAddress = document.createTextNode(place.formatted_address);
+
                 var placeHours = [
                     "Sun: Opens " + place.opening_hours.periods[0].open.time + " - Closes " + place.opening_hours.periods[0].close.time,
                     "Mon: Opens " + place.opening_hours.periods[1].open.time + " - Closes " + place.opening_hours.periods[1].close.time,
@@ -55,14 +56,6 @@ function initMap() {
                     "Fri: Opens " + place.opening_hours.periods[5].open.time + " - Closes " + place.opening_hours.periods[5].close.time,
                     "Sat: Opens " + place.opening_hours.periods[6].open.time + " - Closes " + place.opening_hours.periods[6].close.time
                 ]
-                for (var i = 0; i < placeHours.length; i++) {
-                    if (place.opening_hours.periods[i].open.time == undefined) {
-                        place.opening_hours.periods[i].open.time = "NA"
-                    }
-                    if (place.opening_hours.periods[i].close.time == undefined) {
-                        place.opening_hours.periods[i].close.time = "NA"
-                    }
-                }
 
                 var placeRating = document.createTextNode("Rating (out of 5) : " + place.rating);
                 var placeCost = document.createTextNode("Cost (out of 5) : " + place.price_level);
@@ -78,10 +71,10 @@ function initMap() {
                 placeDetailsDiv.append("Hours: ");
                 var br = document.createElement('br');
                 placeDetailsDiv.appendChild(br);
-                for (var i = 0; i < 7; i++) {
+                for (var i = 0; i < placeHours.length; i++) {
                     placeDetailsDiv.append(placeHours[i]);
                     var br = document.createElement('br');
-                    placeDetailsDiv.appendChild(br);
+                    placeDetailsDiv.append(br);
                 }
 
                 var marker = new google.maps.Marker({

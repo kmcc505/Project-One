@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style/myList.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <!-- Custom styles for the page -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="css/mainpage.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="listpage">
     <script>
         // share on Facebook
         (function (d, s, id) {
@@ -21,16 +24,15 @@
             js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'))
-
     </script>
+    <h1>My List</h1>
     <!-- place info & pictures container -->
     <div class="container main">
         <!-- share container -->
         <div class="row">
             <!-- facebook -->
             <div id="fb-root">
-                <div class="fb-share-button" data-href="" data-layout="button_count" data-size="large"
-                    data-mobile-iframe="true" id="fbButton">
+                <div class="fb-share-button" data-href="" data-layout="button_count" data-size="large" data-mobile-iframe="true" id="fbButton">
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
                         class="fb-xfbml-parse-ignore">Share</a>
                 </div>
@@ -39,12 +41,15 @@
             <a href="" class="twitter-share-button" data-show-count="false" data-size="large" id="twButton">Tweet</a>
         </div>
         <!-- map and place container -->
-        <div class="row">
-            <div id="map"></div>
+        <section>
+            <div class="row">
+                <div id="map"></div>
+        </section>
+        <section>
             <div class="flex-row justify-content-start placeContainer2 col-lg-12" id="ListContainer"></div>
-        </div>
+            </div>
     </div>
-
+    </section>
 
     <!-- scripts -->
     <!-- Twitter share button -->
@@ -59,7 +64,6 @@
     <!-- google maps api -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLdVO39mcv-ELRrVWomhjnt9wAFLgZVLc&libraries=places&callback=initMap">
     </script>
-
 
 </body>
 
